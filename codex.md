@@ -39,9 +39,79 @@ The project is organized as a monorepo managed by a workspace tool such as npm o
 
 **7. Design and Theming**
 
-Use a centralized set of CSS custom properties for fonts, colors, and spacing. Define variables for primary brand colors, gray palettes, status indicators, and accessibility focus highlights. Tailwind configuration should extend the theme with these custom properties, ensuring visual consistency across both subprojects. Include instructions for loading a material symbol font for UI icons.
+Use the following CSS custom properties for fonts, colors, spacing, and icons. Tailwind CSS configuration should extend the theme with these custom properties under `theme.extend.colors`, and set `fontFamily.sans` accordingly. Load the Material Symbols font for icons as described.
 
-**8. Development Workflow**
+:root {
+  /* Fonts */
+  --font-family-open-sans: 'Open Sans', Arial, sans-serif;
+  --material-symbol-font: 'Material Symbols Rounded';
+
+  /* Brand colors */
+  --brand-red: #9e1b32;
+  --brand-gray: #333e48;
+
+  /* Primary color palette */
+  --primary-red:    #9e1b32;
+  --primary-orange: #e77204;
+  --primary-yellow: #f1c319;
+  --primary-green:  #45842a;
+  --primary-blue:   #007298;
+  --primary-purple: #652f6c;
+  --black:          #000000;
+  --white:          #ffffff;
+  --gray:           #333e48;
+
+  /* Gray color palette */
+  --gray-100: #e7e7e7;
+  --gray-200: #cfcfcf;
+  --gray-300: #b5b5b5;
+  --gray-400: #9c9c9c;
+  --gray-500: #828282;
+  --gray-600: #696969;
+  --gray-700: #4f4f4f;
+  --gray-800: #363636;
+  --gray-900: #1c1c1c;
+
+  /* Shadow color palette */
+  --shadow-red:    #6d1222;
+  --shadow-orange: #994a00;
+  --shadow-yellow: #98700c;
+  --shadow-green:  #294d19;
+  --shadow-blue:   #004d66;
+  --shadow-purple: #431f47;
+
+  /* Highlight color palette */
+  --highlights-red:    #ffccd5;
+  --highlights-orange: #ffe5cc;
+  --highlights-yellow: #fff4cc;
+  --highlights-green:  #dbffcc;
+  --highlights-blue:   #cdf3ff;
+  --highlights-purple: #f9ccff;
+
+  /* Status color palette */
+  --status-red:    #e8002a;
+  --status-orange: #ff9633;
+  --status-yellow: #ffd332;
+  --status-green:  #36b300;
+  --status-blue:   #00ace6;
+  --status-purple: #9e00b3;
+
+  /* Basic elements */
+  --text-color:             var(--gray);
+  --link-color:             var(--primary-blue);
+  --link-hover-color:       var(--shadow-blue);
+  --disabled-color:         var(--gray-200);
+  --page-background:        #f7f7f7;
+  --footer-background:      var(--gray);
+  --borders:                var(--gray-400);
+  --light-borders:          var(--gray-200);
+  --dark-borders:           var(--gray-600);
+
+  /* Accessibility focus */
+  --accessibility-focus:    var(--gray-200);
+}
+
+**8. Development Workflow** Development Workflow**
 
 Explain how to install dependencies at the root, run both subprojects concurrently in development mode, and build them for production. Describe the role of workspace commands and how to execute linting and testing tasks across the entire monorepo.
 
